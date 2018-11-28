@@ -9,7 +9,7 @@ public with sharing class APICaller {
                         +'&client_secret=' + settingsAPI.clientSecret__c
                         +'&username=' + EncodingUtil.urlEncode(settingsAPI.username__c, 'UTF-8')
                         +'&password=' + EncodingUtil.urlEncode(settingsAPI.password__c, 'UTF-8');
-        System.debug(reqbody);
+        System.debug(' reqbody => '+ reqbody);
         Http h = new Http();
         HttpRequest req = new HttpRequest();
         req.setBody(reqbody);
@@ -17,9 +17,12 @@ public with sharing class APICaller {
         
         req.setMethod('POST');
         req.setEndpoint(settingsAPI.destURL__c);
+        System.debug(' settingsAPI.destURL__c => '+ settingsAPI.destURL__c);
         try{
             HttpResponse res = h.send(req);
+            System.debug(' res.getbody() => '+ res.getbody());
             this.oauth = (OAuth2)JSON.deserialize(res.getbody(), OAuth2.class);
+            
         }catch(CalloutException e){
             System.debug('CalloutException during Authentication ' + e.getMessage());
             throw new Task6Exception('CalloutException during Authentication ');
