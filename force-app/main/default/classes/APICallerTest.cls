@@ -82,7 +82,8 @@ public class APICallerTest {
             msg = e.getMessage();
         }
         Test.stopTest();
-        System.assert(msg.contains('JSONException during Authentication '));
+         System.debug('APICallerInalidAuthTest msg : ' + msg);
+        System.assert(msg.contains('Retry auth'));
 		System.assert( api.oauth == null); 
 		
     }
@@ -99,7 +100,8 @@ public class APICallerTest {
             msg = e.getMessage();
         }
         Test.stopTest();
-        System.assert(msg.contains('CalloutException during Authentication'));
+        System.debug('APICallerInvalidAuthCalloutTest msg : ' + msg);
+        System.assert(msg.contains('Retry auth'));
 		System.assert( api.oauth == null); 
 		
     }

@@ -6,22 +6,22 @@ global class MockAPICallerGeneratorInvalidStatus500  implements HttpCalloutMock 
             return mockingOAuth();
         }
         if(req.getMethod() == 'GET' && req.getEndpoint().contains('/services/apexrest/AllJobAdvertisements')){            
-            return mockingAllJobAdvertisements();
+            return mockForAcceptHeader();
         }
         if(req.getMethod() == 'GET' && req.getEndpoint().contains('/services/apexrest/JobAdvertisementRecord?id=')){            
-            return mockingJobAdvertisementById();
+            return mockForAcceptHeader();
         }
         if(req.getMethod() == 'DELETE' && req.getEndpoint().contains('/services/apexrest/JobAdvertisementRecord?id=')){            
-            return mockingDeleteJobAdvertisementById();
+            return mockForAcceptHeader();
         }
         if(req.getMethod() == 'POST' && req.getEndpoint().contains('/services/apexrest/archivateJobAdvertisement')){            
-            return mockingArchivateJobAdvertisement();
+            return mockForContentHeader();
         }
-        if(req.getMethod() == 'POST' && req.getEndpoint().contains('/services/apexrest/JobAdvertisementRecord')){            
-            return mockingCreateJobAdvertisement();
+        if((req.getMethod() == 'PUT' || req.getMethod() == 'POST' ) && req.getEndpoint().contains('/services/apexrest/JobAdvertisementRecord')){            
+            return mockForContentHeader();
         }
-        if(req.getMethod() == 'PUT' && req.getEndpoint().contains('/services/apexrest/JobAdvertisementRecord')){            
-            return mockingUpdateJobAdvertisement();
+        if( req.getEndpoint().contains('/services/apexrest/newCVs') ){            
+            return mockForAcceptHeader();
         }
         return null;
     }
@@ -32,42 +32,15 @@ global class MockAPICallerGeneratorInvalidStatus500  implements HttpCalloutMock 
         res.setStatusCode(200);
         return res;
     }
-    public HTTPResponse mockingAllJobAdvertisements() {
+  
+    public HTTPResponse mockForAcceptHeader() {
         HttpResponse res = new HttpResponse();
         res.setHeader('Accept','application/json');
         res.setBody(System.Label.Server_Exception);
         res.setStatusCode(500);
         return res;
     }
-    public HTTPResponse mockingJobAdvertisementById() {
-        HttpResponse res = new HttpResponse();
-        res.setHeader('Accept','application/json');
-        res.setBody(System.Label.Server_Exception);
-        res.setStatusCode(500);
-        return res;
-    }
-    public HTTPResponse mockingArchivateJobAdvertisement(){
-        HttpResponse res = new HttpResponse();
-        res.setHeader('Content-Type', 'application/json');
-        res.setBody(System.Label.Server_Exception);
- 		res.setStatusCode(500);
-        return res;
-    }
-    public HTTPResponse mockingDeleteJobAdvertisementById() {
-        HttpResponse res = new HttpResponse();
-        res.setHeader('Accept','application/json');
-        res.setBody(System.Label.Server_Exception);
-        res.setStatusCode(500);
-        return res;
-    }
-    public HTTPResponse mockingCreateJobAdvertisement() {
-        HttpResponse res = new HttpResponse();
-        res.setHeader('Content-Type', 'application/json');
-        res.setBody(System.Label.Server_Exception);
- 		res.setStatusCode(500);
-        return res;
-    }
-    public HTTPResponse mockingUpdateJobAdvertisement() {
+    public HTTPResponse mockForContentHeader() {
         HttpResponse res = new HttpResponse();
         res.setHeader('Content-Type', 'application/json');
 		res.setBody(System.Label.Server_Exception);        

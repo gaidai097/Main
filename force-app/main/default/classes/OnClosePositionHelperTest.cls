@@ -32,4 +32,24 @@ public class OnClosePositionHelperTest {
         System.assert( msg == null );
         Test.stopTest();
     }
+    @isTest
+    public static void invalidArgumentsTest(){
+        
+        Test.startTest();
+        String msg;
+        try{
+            OnClosePositionHelper.clearCVs( new List<Position__c>{new Position__c()} );
+        }catch(Exception e){
+			msg = e.getMessage();
+        }
+        System.assert( msg == null );
+        msg = null ;
+        try{
+            OnClosePositionHelper.deleteCVSnapshots(null);
+        }catch(Exception e){
+			msg = e.getMessage();
+        }
+        System.assert( msg.contains('CVSnapshots were not removed') );
+        Test.stopTest();
+    }
 }

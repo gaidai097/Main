@@ -17,6 +17,10 @@ public with sharing  class CVApiCaller {
             HTTPResponse res = http.send(req);
             switch on res.getStatusCode(){
                 when 200 { return Integer.valueOf( res.getBody() ) ;}
+                when 401 { 
+                    System.debug('401 Retry auth');
+                    throw new Task6Exception( 'Retry auth');
+                }
             	when 500 { throw new Task6Exception( res.getBody());}                
                 when else { System.debug('error: ' + res.getBody()); throw new Task6Exception('Exception , response status : ' + res.getStatusCode());}
             }
