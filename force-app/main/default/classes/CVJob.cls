@@ -1,9 +1,9 @@
 public class CVJob {
     // make 3 reties to login and fetch total count of new CVs
     private Integer retries = 3;
-    public static Integer executions = 4;
+    public static Integer callouts = 4;
     public static Integer calloutSize = 25;
-    public static Integer batchSize = executions*calloutSize;
+    public static Integer batchSize = callouts*calloutSize;
     CVApiCaller cvApi = new CVApiCaller();
 	
     public void fetchCVs(){
@@ -35,7 +35,7 @@ public class CVJob {
             Integer offset = 0;
             for( Integer i = 0; i < batchObjects; i++ ){
                 List<Integer> offsetsForCurrentBatch = new List <Integer>();
-                for(Integer k = 0; k < executions; k++ ){
+                for(Integer k = 0; k < callouts; k++ ){
                     offsetsForCurrentBatch.add(offset);
                     offset += calloutSize;
                 }

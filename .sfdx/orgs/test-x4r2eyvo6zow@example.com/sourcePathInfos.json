@@ -32,14 +32,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default",
             "isDirectory": true,
-            "isMetadataFile": false,
             "size": 0,
             "modifiedTime": 1543416333432,
             "changeTime": 1543416333432,
-            "contentHash": "1110e1d2a4192ebdbcd7591d5d71bc8e6d83db8a"
+            "contentHash": "1110e1d2a4192ebdbcd7591d5d71bc8e6d83db8a",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [
@@ -109,10 +109,10 @@
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\APICaller.cls",
             "isDirectory": false,
             "isMetadataFile": false,
-            "size": 9422,
-            "modifiedTime": 1543416333466,
-            "changeTime": 1543416333466,
-            "contentHash": "44f6f62b6317dfbd78e5b70ac12b7c336a8db626"
+            "size": 8023,
+            "modifiedTime": 1543487346944,
+            "changeTime": 1543487346944,
+            "contentHash": "6701cc3d9d7b03c06a669f0f3dfe8a710810ac88"
         }
     ],
     [
@@ -283,16 +283,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVApiCaller.cls",
         {
+            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVApiCaller.cls",
             "isDirectory": false,
-            "size": 3732,
-            "modifiedTime": 1543254905105,
-            "changeTime": 1543254905105,
-            "contentHash": "2074570ffa5892f5084138677ed8e0b6cfdfe8e0",
             "isMetadataFile": false,
-            "state": "n",
-            "isWorkspace": false,
-            "isArtifactRoot": false
+            "size": 2433,
+            "modifiedTime": 1543487346881,
+            "changeTime": 1543487346881,
+            "contentHash": "42d3a726c416e8b13a245b2a9b6c704f98c0a56d"
         }
     ],
     [
@@ -347,10 +345,10 @@
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVBatchable.cls",
             "isDirectory": false,
             "isMetadataFile": false,
-            "size": 3255,
-            "modifiedTime": 1543416333454,
-            "changeTime": 1543416333454,
-            "contentHash": "94a4832be366d61b2bb5daebb1b8037b603ef1ff"
+            "size": 3128,
+            "modifiedTime": 1543487346897,
+            "changeTime": 1543487346897,
+            "contentHash": "8c417a1d2ab3c7c346cfac58118591e408535e68"
         }
     ],
     [
@@ -431,16 +429,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVBatchableTest.cls",
         {
+            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVBatchableTest.cls",
             "isDirectory": false,
-            "size": 1776,
-            "modifiedTime": 1543254905121,
-            "changeTime": 1543254905121,
-            "contentHash": "8a32c3d0cbcf6d7a6c9be21c2d7f7de09807cd5b",
             "isMetadataFile": false,
-            "state": "n",
-            "isWorkspace": false,
-            "isArtifactRoot": false
+            "size": 1774,
+            "modifiedTime": 1543487346881,
+            "changeTime": 1543487346881,
+            "contentHash": "aa5a30fff0f7eeb7093f5f0d87ba0147d08f2108"
         }
     ],
     [
@@ -461,16 +457,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVFlexibleBehaviorMock.cls",
         {
+            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVFlexibleBehaviorMock.cls",
             "isDirectory": false,
-            "size": 4597,
-            "modifiedTime": 1543254905136,
-            "changeTime": 1543254905136,
-            "contentHash": "58ce13e58161a9c92c104b26ad48176c489c705e",
             "isMetadataFile": false,
-            "state": "n",
-            "isWorkspace": false,
-            "isArtifactRoot": false
+            "size": 5370,
+            "modifiedTime": 1543487346928,
+            "changeTime": 1543487346928,
+            "contentHash": "7f4fd9216735e478bd3b24012dd06c1aab40830a"
         }
     ],
     [
@@ -521,16 +515,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVJob.cls",
         {
+            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVJob.cls",
             "isDirectory": false,
-            "size": 2816,
-            "modifiedTime": 1543254905136,
-            "changeTime": 1543254905136,
-            "contentHash": "cb0782ed273fdb658744f20ba859bb82931fa7db",
             "isMetadataFile": false,
-            "state": "n",
-            "isWorkspace": false,
-            "isArtifactRoot": false
+            "size": 2810,
+            "modifiedTime": 1543487346928,
+            "changeTime": 1543487346928,
+            "contentHash": "932d669c78b18ff3ca97c762fc1a42ff3e163c3e"
         }
     ],
     [
@@ -551,16 +543,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVJobTest.cls",
         {
+            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVJobTest.cls",
             "isDirectory": false,
-            "size": 3964,
-            "modifiedTime": 1543254905152,
-            "changeTime": 1543254905152,
-            "contentHash": "0415c457bd65618a339f4df6e574f955ebbf5677",
             "isMetadataFile": false,
-            "state": "n",
-            "isWorkspace": false,
-            "isArtifactRoot": false
+            "size": 3959,
+            "modifiedTime": 1543487346881,
+            "changeTime": 1543487346881,
+            "contentHash": "24d722119d1aa5c5eb146b36c7805ae436011450"
         }
     ],
     [
@@ -1031,16 +1021,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\OAuth2.cls",
         {
+            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\OAuth2.cls",
             "isDirectory": false,
-            "size": 212,
-            "modifiedTime": 1543254905246,
-            "changeTime": 1543254905246,
-            "contentHash": "b6656866b9e55d6ab15af49933d1692d27eed004",
             "isMetadataFile": false,
-            "state": "n",
-            "isWorkspace": false,
-            "isArtifactRoot": false
+            "size": 1612,
+            "modifiedTime": 1543487346865,
+            "changeTime": 1543487346865,
+            "contentHash": "0e8e7c3ac2b4c7adbdd897729336d8a025569302"
         }
     ],
     [
@@ -1841,16 +1829,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\objects\\Candidate__c\\fields\\Email__c.field-meta.xml",
         {
+            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\objects\\Candidate__c\\fields\\Email__c.field-meta.xml",
             "isDirectory": false,
-            "size": 377,
-            "modifiedTime": 1543254905529,
-            "changeTime": 1543254905529,
-            "contentHash": "9767827a799e8cd4e0d1413da9a7cb9108c63cee",
             "isMetadataFile": true,
-            "state": "n",
-            "isWorkspace": false,
-            "isArtifactRoot": false
+            "size": 376,
+            "modifiedTime": 1543487346850,
+            "changeTime": 1543487346850,
+            "contentHash": "3ca0359ef1ac69c1f4532634c596aca76d8bad28"
         }
     ],
     [
@@ -3986,27 +3972,27 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\remoteSiteSettings\\JobAdvertisementApp.remoteSite-meta.xml",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\remoteSiteSettings\\JobAdvertisementApp.remoteSite-meta.xml",
             "isDirectory": false,
-            "isMetadataFile": true,
             "size": 262,
             "modifiedTime": 1543416333470,
             "changeTime": 1543416333470,
-            "contentHash": "e400438b4a667073046cca691c7dc86d82433683"
+            "contentHash": "e400438b4a667073046cca691c7dc86d82433683",
+            "isMetadataFile": true,
+            "state": "u"
         }
     ],
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\remoteSiteSettings\\RESTDestination.remoteSite-meta.xml",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\remoteSiteSettings\\RESTDestination.remoteSite-meta.xml",
             "isDirectory": false,
-            "isMetadataFile": true,
             "size": 297,
             "modifiedTime": 1543416333468,
             "changeTime": 1543416333468,
-            "contentHash": "a48d5cc46a56bb8f6246101437706bf519d2184c"
+            "contentHash": "a48d5cc46a56bb8f6246101437706bf519d2184c",
+            "isMetadataFile": true,
+            "state": "u"
         }
     ],
     [
@@ -4342,53 +4328,53 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\email\\unfiled$public\\ForPosition.email-meta.xml",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\email\\unfiled$public\\ForPosition.email-meta.xml",
             "isDirectory": false,
-            "isMetadataFile": true,
             "size": 337,
             "modifiedTime": 1543416333435,
             "changeTime": 1543416333435,
-            "contentHash": "9b77cb0b09b14fc5ee30a64977425155eb4c0ceb"
+            "contentHash": "9b77cb0b09b14fc5ee30a64977425155eb4c0ceb",
+            "isMetadataFile": true,
+            "state": "u"
         }
     ],
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\email\\unfiled$public\\ForPosition.email",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\email\\unfiled$public\\ForPosition.email",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 0,
             "modifiedTime": 1543416333437,
             "changeTime": 1543416333437,
-            "contentHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+            "contentHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\email\\unfiled$public",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\email\\unfiled$public",
             "isDirectory": true,
-            "isMetadataFile": false,
             "size": 0,
             "modifiedTime": 1543416333437,
             "changeTime": 1543416333437,
-            "contentHash": "6313f0f9389a086581c1c68cc6b22f1d0e61cf8c"
+            "contentHash": "6313f0f9389a086581c1c68cc6b22f1d0e61cf8c",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\email",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\email",
             "isDirectory": true,
-            "isMetadataFile": false,
             "size": 0,
             "modifiedTime": 1543416333432,
             "changeTime": 1543416333432,
-            "contentHash": "36b4ca4c5731877fa01de2265bc0e080036f21b0"
+            "contentHash": "36b4ca4c5731877fa01de2265bc0e080036f21b0",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ]
 ]

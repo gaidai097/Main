@@ -1,8 +1,14 @@
 @isTest
 global class CVFlexibleBehaviorMock implements HttpCalloutMock {
+     /*
+     * 
+     * 
+     * 
+     */
     global Integer index = 0;
     global  HTTPResponse respond(HTTPRequest req){
         System.debug('HTTPResponse' + ' index ' + index);
+        System.debug( req.getMethod()  + ' ' + req.getEndpoint());
         if(req.getMethod() == 'POST' && req.getEndpoint() == 'https://login.salesforce.com/services/oauth2/token'){            
             return mockingOAuth();
         }
@@ -11,20 +17,32 @@ global class CVFlexibleBehaviorMock implements HttpCalloutMock {
         }      
         if(req.getMethod() == 'GET' && req.getEndpoint().contains('/services/apexrest/newCVs?offset=' + 0 +'&limit='+ 2 ) && index == 0 ){  
             this.index++;
-            return mockingGetFirstCVsValid();
-        }
-        if(req.getMethod() == 'GET' && req.getEndpoint().contains('/services/apexrest/newCVs?offset=' + 2 +'&limit='+ 2 ) && index == 1){  
-            this.index++;
             return mockingInvalidAuthToken();
+        }
+        if(req.getMethod() == 'GET' && req.getEndpoint().contains('/services/apexrest/newCVs?offset=' + 0 +'&limit='+ 2 ) && index == 1){  
+            this.index++;
+            return mockingGetFirstCVsValid();
         }
         if(req.getMethod() == 'GET' && req.getEndpoint().contains('/services/apexrest/newCVs?offset=' + 2 +'&limit='+ 2 ) && index == 2){  
             this.index++;
             return mockingInvalidJSONToken();
         }
-        if(req.getMethod() == 'GET' && req.getEndpoint().contains('/services/apexrest/newCVs?offset=' ) && (index == 3 || index > 4)){  
+        if(req.getMethod() == 'GET' && req.getEndpoint().contains('/services/apexrest/newCVs?offset=' + 2 +'&limit='+ 2) && (index > 3 )){  
             this.index++;
             return mockingGetCVsValid();
         } 
+        if(req.getMethod() == 'GET' && req.getEndpoint().contains('/services/apexrest/newCVs?offset=' + 4 +'&limit='+ 2  ) && (index >= 3)){  
+            this.index++;
+            return mockingInvalidJSONToken();
+        } 
+        if(req.getMethod() == 'GET' && req.getEndpoint().contains('/services/apexrest/newCVs?offset=' + 6 +'&limit='+ 2  ) ){  
+            this.index++;
+            return mockingInvalidAuthToken();
+        } 
+        if(req.getMethod() == 'GET' && req.getEndpoint().contains('/services/apexrest/newCVs?offset=' + 6 +'&limit='+ 2  ) && (index >= 5)){  
+            this.index++;
+            return mockingInvalidJSONToken();
+        }
         return null;
     }
     public HTTPResponse mockingOAuth() {
@@ -39,7 +57,7 @@ global class CVFlexibleBehaviorMock implements HttpCalloutMock {
         System.debug('mockingGetCount' + ' index ' + index);
         HttpResponse res = new HttpResponse();
         res.setHeader('Accept', 'application/json');
-        res.setBody('3');
+        res.setBody('7');
         res.setStatusCode(200);
         return res;
     }

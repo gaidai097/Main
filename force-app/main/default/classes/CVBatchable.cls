@@ -23,30 +23,24 @@ global class CVBatchable implements Database.Batchable<List<Integer>>, Database.
             for(Integer calloutOffset : offset){
                 try{
                     try{
-                        List <CVImageWrapper> fetchedCVs = fetchCVRecords( calloutOffset, this.limitSize );
-                        System.debug('fetchedCVs ' + fetchedCVs.size());
-                        cvsWrapped.addall( fetchedCVs );
+                        cvsWrapped.addall( fetchCVRecords( calloutOffset, this.limitSize ) );
                     }catch( Task6Exception e ){
                         if( e.getMessage() == 'Retry auth' && authRetries > 0 ){
                             this.authRetries--;
                             this.cvApi.oauthLogin();
-                            List <CVImageWrapper> fetchedCVs = fetchCVRecords( calloutOffset, this.limitSize );
-                            System.debug('fetchedCVs ' + fetchedCVs.size());
-                        	cvsWrapped.addall( fetchedCVs );
+                        	cvsWrapped.addall( fetchCVRecords( calloutOffset, this.limitSize ) );
                         }else{
                             if( !isRetry ) offsetsToRetry.add( new List<Integer>{calloutOffset});
                         }
                     }
                 }catch( Exception e ){
-                    System.debug( 'Exception during fetching with offset: ' + calloutOffset );
-                    System.debug( e.getMessage() );
+                    System.debug('Exception during fetching with offset: ' + calloutOffset  + ' ' + e.getMessage() );
                     if( !isRetry ) offsetsToRetry.add( new List<Integer>{calloutOffset});
                 }
             }
         }
+        if( !cvsWrapped.isEmpty()) CVBatchableService.upsertCandidatesCV(cvsWrapped);        
         System.debug('upserted ' + cvsWrapped.size());
-        CVBatchableService.upsertCandidatesCV(cvsWrapped);
-        
     }
     global void finish(Database.BatchableContext BC){
         if( !offsetsToRetry.isEmpty() && !isRetry ){
@@ -57,9 +51,15 @@ global class CVBatchable implements Database.Batchable<List<Integer>>, Database.
         }
     }
     public List<CVImageWrapper> fetchCVRecords(Integer offset,Integer limitSize){
-        String cvs = cvApi.fetchCVs(offset, limitSize);            
-        List<CVImageWrapper> cvsWrapped = ( List <CVImageWrapper> )System.JSON.deserialize( cvs, List<CVImageWrapper>.class );        
-        System.debug('cvsWrapped for callout' + cvsWrapped.size());
+        String cvs = cvApi.fetchCVs(offset, limitSize);
+        List<CVImageWrapper> cvsWrapped ;
+        try{
+            cvsWrapped = ( List <CVImageWrapper> )System.JSON.deserialize( cvs, List<CVImageWrapper>.class ); 
+        }catch(JSONException e){
+            System.debug('JSONException ' +  e.getMessage());
+            throw new Task6Exception(e.getMessage());
+        }     
+        System.debug('cvsWrapped ' + cvsWrapped.size());
         return cvsWrapped;
     }
     

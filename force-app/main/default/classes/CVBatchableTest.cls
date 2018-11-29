@@ -7,7 +7,7 @@ public class CVBatchableTest {
         Test.setMock(HttpCalloutMock.class, new MockAPICallerGeneratorInvalidJSONAuth());
         Test.startTest();
         CVJob.calloutSize= 2;
-        CVJob.executions = 2;
+        CVJob.callouts = 2;
         CVJob.batchSize = 4;
         CVJob job = new CVJob();
         CVBatchable batch = new CVBatchable( CVJob.calculateOffsets(3) , new OAuth2() , 2, false); 

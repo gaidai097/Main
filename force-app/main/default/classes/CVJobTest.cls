@@ -1,19 +1,20 @@
 @isTest
 public class CVJobTest {
-	//@isTest
+	@isTest
     public static void invalidAuthTest(){
         TestDataFactory.insertMockCustomSettings();
         Test.setMock(HttpCalloutMock.class, new MockAPICallerGeneratorInvalidJSONAuth());
         Test.startTest();
         CVJob.calloutSize= 2;
-        CVJob.executions = 2;
+        CVJob.callouts = 2;
         CVJob.batchSize = 4;
         CVJob job = new CVJob();
         job.fetchCVs();
         Test.stopTest();
     }
-   // @isTest
+    @isTest
     public static void fetchCVsValidTest(){
+        
         TestDataFactory.insertMockCustomSettings();
         
         List <Position__c> positions = TestDataFactory.createPositions(5);
@@ -30,8 +31,8 @@ public class CVJobTest {
         
         Test.startTest();
         CVJob.calloutSize= 2;
-        CVJob.executions = 2;
-        CVJob.batchSize = 4;
+        CVJob.callouts = 4;
+        CVJob.batchSize = 8;
         CVJob job = new CVJob();
         job.fetchCVs();                
         Test.stopTest();
@@ -43,11 +44,11 @@ public class CVJobTest {
         System.assertEquals( 2, cvSnapshots.size() );
     }
     
-    //@isTest
+    @isTest
     public static void calculateOffsetsTest(){
         
         CVJob.calloutSize= 2;
-        CVJob.executions = 2;
+        CVJob.callouts = 2;
         CVJob.batchSize = 4;
         List < List<Integer> > offsets = CVJob.calculateOffsets(8);
        	System.assertEquals( 2,  offsets.size());
@@ -80,8 +81,8 @@ public class CVJobTest {
         
         Test.startTest();
         CVJob.calloutSize= 2;
-        CVJob.executions = 2;
-        CVJob.batchSize = 4;
+        CVJob.callouts = 4;
+        CVJob.batchSize = 8;
         CVScheduled job = new CVScheduled();
         job.execute(null);
         //System.schedule('TestJob', cronExp, job);              

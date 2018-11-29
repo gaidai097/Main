@@ -2,34 +2,8 @@ public with sharing class APICaller {
     
     public OAuth2 oauth {get;set;} 
     
-    public void oauthLogin(){   
-        OAuth_integration__c settingsAPI = OAuth_integration__c.getOrgDefaults();
-        
-        String reqbody = 'grant_type=password&client_id=' + settingsAPI.clientId__c
-                        +'&client_secret=' + settingsAPI.clientSecret__c
-                        +'&username=' + EncodingUtil.urlEncode(settingsAPI.username__c, 'UTF-8')
-                        +'&password=' + EncodingUtil.urlEncode(settingsAPI.password__c, 'UTF-8');
-        System.debug(' reqbody => '+ reqbody);
-        Http h = new Http();
-        HttpRequest req = new HttpRequest();
-        req.setBody(reqbody);
-        req.setHeader('Accept','application/json');
-        
-        req.setMethod('POST');
-        req.setEndpoint(settingsAPI.destURL__c);
-        System.debug(' settingsAPI.destURL__c => '+ settingsAPI.destURL__c);
-        try{
-            HttpResponse res = h.send(req);
-            System.debug(' res.getbody() => '+ res.getbody());
-            this.oauth = (OAuth2)JSON.deserialize(res.getbody(), OAuth2.class);
-            
-        }catch(CalloutException e){
-            System.debug('CalloutException during Authentication ' + e.getMessage());
-            throw new Task6Exception('CalloutException during Authentication ');
-        }catch(JSONException e){
-            System.debug('JSONException during Authentication ' + e.getMessage());
-            throw new Task6Exception('JSONException during Authentication ');
-        }
+    public void oauthLogin(){
+       this.oauth = OAuth2.login();
     }
     public PageListWrapper getAllJobAdvertisements(Map <String, String> params) {
         
