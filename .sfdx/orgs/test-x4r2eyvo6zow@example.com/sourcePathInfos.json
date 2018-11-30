@@ -719,10 +719,10 @@
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\JobAdvertisementsWrapper.cls",
             "isDirectory": false,
             "isMetadataFile": false,
-            "size": 2141,
-            "modifiedTime": 1543596421398,
-            "changeTime": 1543596421398,
-            "contentHash": "ff74b00efb5a3a87c8450c186b670c75a67b249b"
+            "size": 2453,
+            "modifiedTime": 1543601552054,
+            "changeTime": 1543601552054,
+            "contentHash": "6ea33779874027dd6a646b4fe77e471aac399c7d"
         }
     ],
     [
@@ -1588,27 +1588,27 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\layouts\\Position__c-Position Layout.layout-meta.xml",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\layouts\\Position__c-Position Layout.layout-meta.xml",
             "isDirectory": false,
-            "isMetadataFile": true,
             "size": 10314,
             "modifiedTime": 1543596421382,
             "changeTime": 1543596421382,
-            "contentHash": "b9d24e556556a13e99f483d066f218c303b21cb8"
+            "contentHash": "b9d24e556556a13e99f483d066f218c303b21cb8",
+            "isMetadataFile": true,
+            "state": "u"
         }
     ],
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\layouts\\Position__c-Technical Position Layout.layout-meta.xml",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\layouts\\Position__c-Technical Position Layout.layout-meta.xml",
             "isDirectory": false,
-            "isMetadataFile": true,
             "size": 11151,
             "modifiedTime": 1543596421363,
             "changeTime": 1543596421363,
-            "contentHash": "70fd6554e8a62612442d6032ec9edcccd12ed60e"
+            "contentHash": "70fd6554e8a62612442d6032ec9edcccd12ed60e",
+            "isMetadataFile": true,
+            "state": "u"
         }
     ],
     [

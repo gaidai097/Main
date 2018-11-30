@@ -16,28 +16,8 @@ public class JobAdvertisementsWrapper {
     
     public static JobAdvertisementsWrapper convertPosition(Position__c position){        
         JobAdvertisementsWrapper result = new JobAdvertisementsWrapper();
+        fillSalaryRange(result, position);
         result.location = position.Location__c;
-        if(position.Salary_Range__c != null && position.Salary_Range__c != ''){
-            List <String> statutes = position.Salary_Range__c.split('K');
-            List <Integer> values = new List <Integer>();
-            for(String st: statutes){
-                String numericString = '';
-                for(integer i =0; i <st.length();i++){
-                    String s= st.mid(i,1);
-                    if(s.isNumeric()){
-                        numericString +=s;
-                    }
-                }if(numericString.length() > 0){
-					values.add( integer.valueof(numericString) );
-				}                
-            }
-            if(values.size()> 0){
-                result.salaryMin = values[0] + '';
-                if(values.size() == 2){
-                    result.salaryMax = values[1] + '';
-                }
-            }
-        }
         result.education = position.Education__c;
         result.email = position.Hiring_Manager__r.Email;
         result.phone = position.Hiring_Manager__r.Phone;
@@ -48,5 +28,32 @@ public class JobAdvertisementsWrapper {
         result.skills = position.Skills_Required__c;
         result.id = position.External__c;
         return result ;
+    }
+    public static void fillSalaryRange(JobAdvertisementsWrapper result ,Position__c position){
+        if(position.Salary_Range__c != null && position.Salary_Range__c != ''){
+            List <Integer> values = reformSalaryRange(position.Salary_Range__c);           
+            if(values.size()> 0){
+                result.salaryMin = values[0] + '';
+                if(values.size() == 2){
+                    result.salaryMax = values[1] + '';
+                }
+            }
+        }
+    }
+    public static List <Integer> reformSalaryRange(String salaryRange){
+        List <String> levels = salaryRange.split('K');
+        List <Integer> values = new List <Integer>();
+        for(String level: levels){
+            String stringLevel = '';
+            for(integer i =0; i <level.length();i++){
+                String currentChar = level.mid(i,1);
+                if(currentChar.isNumeric()){
+                    stringLevel += currentChar;
+                }
+            }if(stringLevel.length() > 0){
+                values.add( integer.valueof(stringLevel) );
+            }
+        }
+        return values;
     }
 }
