@@ -133,14 +133,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\APICallerTest.cls",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\APICallerTest.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 7172,
             "modifiedTime": 1543511106573,
             "changeTime": 1543511106573,
-            "contentHash": "20f417eb54ec9a769cc14dc180a8dd1ce9692afd"
+            "contentHash": "20f417eb54ec9a769cc14dc180a8dd1ce9692afd",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [
@@ -281,14 +281,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVApiCaller.cls",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVApiCaller.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 2592,
             "modifiedTime": 1543511106569,
             "changeTime": 1543511106569,
-            "contentHash": "5162c2af6bd05079fc94e25a445d0185537225f9"
+            "contentHash": "5162c2af6bd05079fc94e25a445d0185537225f9",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [
@@ -309,14 +309,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVApiCallerTest.cls",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVApiCallerTest.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 5340,
             "modifiedTime": 1543511106583,
             "changeTime": 1543511106583,
-            "contentHash": "b4a5456b3d9168dbaa7b2fabc8ee4353a06e2183"
+            "contentHash": "b4a5456b3d9168dbaa7b2fabc8ee4353a06e2183",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [
@@ -337,14 +337,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVBatchable.cls",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVBatchable.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 3311,
             "modifiedTime": 1543511106578,
             "changeTime": 1543511106578,
-            "contentHash": "5d881a74016cc8581a3ef5c4b85d79d3862c6074"
+            "contentHash": "5d881a74016cc8581a3ef5c4b85d79d3862c6074",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [
@@ -395,14 +395,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVBatchableService.cls",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\CVBatchableService.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 6076,
             "modifiedTime": 1543511106558,
             "changeTime": 1543511106558,
-            "contentHash": "12d6373eb929354a7b5637b8d7701474fd380862"
+            "contentHash": "12d6373eb929354a7b5637b8d7701474fd380862",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [
@@ -715,16 +715,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\JobAdvertisementsWrapper.cls",
         {
+            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\JobAdvertisementsWrapper.cls",
             "isDirectory": false,
-            "size": 2144,
-            "modifiedTime": 1543254905199,
-            "changeTime": 1543254905199,
-            "contentHash": "22135df2f8083719241ae9a55ef26d943375dafd",
             "isMetadataFile": false,
-            "state": "n",
-            "isWorkspace": false,
-            "isArtifactRoot": false
+            "size": 2141,
+            "modifiedTime": 1543596421398,
+            "changeTime": 1543596421398,
+            "contentHash": "ff74b00efb5a3a87c8450c186b670c75a67b249b"
         }
     ],
     [
@@ -955,14 +953,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\MockAPICallerGeneratorInvalidStatus500.cls",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\MockAPICallerGeneratorInvalidStatus500.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 2314,
             "modifiedTime": 1543511106621,
             "changeTime": 1543511106621,
-            "contentHash": "93986a2fbcaa407d61fafd17e00f4cfd7d8f79cd"
+            "contentHash": "93986a2fbcaa407d61fafd17e00f4cfd7d8f79cd",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [
@@ -1041,14 +1039,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\OnClosePositionHelper.cls",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\OnClosePositionHelper.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 2223,
             "modifiedTime": 1543511106539,
             "changeTime": 1543511106539,
-            "contentHash": "e93ee8b66f75c1e587d5b870281b214769f9dd2a"
+            "contentHash": "e93ee8b66f75c1e587d5b870281b214769f9dd2a",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [
@@ -1069,14 +1067,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\OnClosePositionHelperTest.cls",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\OnClosePositionHelperTest.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 1851,
             "modifiedTime": 1543511106565,
             "changeTime": 1543511106565,
-            "contentHash": "3a7a79cad740dec84bdd07a2689c2b71e8aa5c63"
+            "contentHash": "3a7a79cad740dec84bdd07a2689c2b71e8aa5c63",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [
@@ -1097,14 +1095,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\OnClosePositionTest.cls",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\classes\\OnClosePositionTest.cls",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 2061,
             "modifiedTime": 1543511106625,
             "changeTime": 1543511106625,
-            "contentHash": "42bc57d7ecc93e3dd252b2b375471784bb601918"
+            "contentHash": "42bc57d7ecc93e3dd252b2b375471784bb601918",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [
@@ -1590,31 +1588,27 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\layouts\\Position__c-Position Layout.layout-meta.xml",
         {
+            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\layouts\\Position__c-Position Layout.layout-meta.xml",
             "isDirectory": false,
-            "size": 10176,
-            "modifiedTime": 1543254905404,
-            "changeTime": 1543254905404,
-            "contentHash": "98a83e206e59206d4d2af71da92ecbabeca37a33",
             "isMetadataFile": true,
-            "state": "n",
-            "isWorkspace": false,
-            "isArtifactRoot": false
+            "size": 10314,
+            "modifiedTime": 1543596421382,
+            "changeTime": 1543596421382,
+            "contentHash": "b9d24e556556a13e99f483d066f218c303b21cb8"
         }
     ],
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\layouts\\Position__c-Technical Position Layout.layout-meta.xml",
         {
+            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\layouts\\Position__c-Technical Position Layout.layout-meta.xml",
             "isDirectory": false,
-            "size": 11013,
-            "modifiedTime": 1543254905420,
-            "changeTime": 1543254905420,
-            "contentHash": "b2c1a63787beb6bf46849c4444245a4affe11d4d",
             "isMetadataFile": true,
-            "state": "n",
-            "isWorkspace": false,
-            "isArtifactRoot": false
+            "size": 11151,
+            "modifiedTime": 1543596421363,
+            "changeTime": 1543596421363,
+            "contentHash": "70fd6554e8a62612442d6032ec9edcccd12ed60e"
         }
     ],
     [
@@ -4209,14 +4203,14 @@
     [
         "C:\\JAsSite\\main\\main\\force-app\\main\\default\\triggers\\OnClosePosition.trigger",
         {
-            "state": "u",
             "sourcePath": "C:\\JAsSite\\main\\main\\force-app\\main\\default\\triggers\\OnClosePosition.trigger",
             "isDirectory": false,
-            "isMetadataFile": false,
             "size": 840,
             "modifiedTime": 1543511106628,
             "changeTime": 1543511106628,
-            "contentHash": "96ac859b3f3c4bc37a8b7625d9bacfe24356145b"
+            "contentHash": "96ac859b3f3c4bc37a8b7625d9bacfe24356145b",
+            "isMetadataFile": false,
+            "state": "u"
         }
     ],
     [

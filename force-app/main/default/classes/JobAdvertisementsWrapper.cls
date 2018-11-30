@@ -23,7 +23,6 @@ public class JobAdvertisementsWrapper {
             for(String st: statutes){
                 String numericString = '';
                 for(integer i =0; i <st.length();i++){
-                    System.debug( 'st ' + st);
                     String s= st.mid(i,1);
                     if(s.isNumeric()){
                         numericString +=s;
@@ -43,6 +42,7 @@ public class JobAdvertisementsWrapper {
         result.email = position.Hiring_Manager__r.Email;
         result.phone = position.Hiring_Manager__r.Phone;
         result.name = position.Name;
+        result.status = position.Status__c;
         result.manager_name = position.Hiring_Manager__r.Name;
         result.description = position.Job_Description__c;
         result.skills = position.Skills_Required__c;
