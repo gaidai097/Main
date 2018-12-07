@@ -10,7 +10,8 @@ public class CVBatchableTest {
         CVJob.callouts = 2;
         CVJob.batchSize = 4;
         CVJob job = new CVJob();
-        CVBatchable batch = new CVBatchable( CVJob.calculateOffsets(3) , new OAuth2() , 2, false); 
+        job.count = 3;
+        CVBatchable batch = new CVBatchable( job.calculateOffsets() , new OAuth2() , 2, false); 
         database.executebatch( batch, 1 );
         
         Test.stopTest();
@@ -40,5 +41,18 @@ public class CVBatchableTest {
         System.assertEquals( 24, candidates.size() );
         System.assertEquals( 58, jobApplications.size() );
         System.assertEquals( 25, cvSnapshots.size() );
+    }
+    @isTest
+    public static void unsuccessfulRetryFinishTest(){
+     
+        Test.startTest();
+        CVJob job = new CVJob();
+        job.count = 100;
+        CVBatchable batch = new CVBatchable( job.calculateOffsets() , new OAuth2() , 4, true);
+        batch.offsetsToRetry =  job.calculateOffsets();
+        batch.finish(null);
+        System.assertEquals( 1, Limits.getEmailInvocations() ); 
+        Test.stopTest();
+        
     }
 }

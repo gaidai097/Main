@@ -1,0 +1,11 @@
+<apex:page standardController="CVSnapshot__c">
+    <apex:pageBlock >  
+        <apex:pageMessages />
+        <apex:pageBlockSection showHeader="false" columns="1" id="block1"> 
+            <apex:pageBlockSectionItem rendered="{!(CVSnapshot__c.ImageId__c !=null)}">                    
+                <apex:image value="https://task9-developer-edition.eu16.force.com/Task9/sfc/servlet.shepherd/version/download/{!CVSnapshot__c.ImageId__c}"
+                            alt="Candidate's photo" height="200" width="" />
+            </apex:pageBlockSectionItem>              
+        </apex:pageBlockSection>            
+    </apex:pageBlock>
+</apex:page>

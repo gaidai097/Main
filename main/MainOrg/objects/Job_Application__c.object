@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Average_Review_Score__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Number_of_Reviews__c &lt;&gt; 0, Total_Review_Score__c / Number_of_Reviews__c, null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Average Review Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CVSnapshot__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>CVSnapshot</label>
+        <referenceTo>CVSnapshot__c</referenceTo>
+        <relationshipLabel>Job Applications</relationshipLabel>
+        <relationshipName>Job_Applications</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Candidate__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Candidate</label>
+        <referenceTo>Candidate__c</referenceTo>
+        <relationshipLabel>Job Applications</relationshipLabel>
+        <relationshipName>Job_Applications</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_Job_Application_Number__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Legacy Job Application Number</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_Reviews__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Reviews</label>
+        <summaryForeignKey>Review__c.Job_Application__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Position__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Position</label>
+        <referenceTo>Position__c</referenceTo>
+        <relationshipLabel>Job Applications</relationshipLabel>
+        <relationshipName>Job_Applications</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Review_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Average_Review_Score__c &gt;= 3.5,IMAGE(&quot;/img/samples/light_green.gif&quot;, &quot;Green&quot;),IF(Average_Review_Score__c &gt;= 2.5,IMAGE(&quot;/img/samples/light_yellow.gif&quot;, &quot;Yellow&quot;),IF(Average_Review_Score__c &gt; 0,IMAGE(&quot;/img/samples/light_red.gif&quot;, &quot;Red&quot;),&quot;No Reviews&quot;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Review Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Status__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Phone Screen</fullName>
+                    <default>false</default>
+                    <label>Phone Screen</label>
+                </value>
+                <value>
+                    <fullName>Schedule Interviews</fullName>
+                    <default>false</default>
+                    <label>Schedule Interviews</label>
+                </value>
+                <value>
+                    <fullName>Interviews Completed</fullName>
+                    <default>false</default>
+                    <label>Interviews Completed</label>
+                </value>
+                <value>
+                    <fullName>Offer Extended</fullName>
+                    <default>false</default>
+                    <label>Offer Extended</label>
+                </value>
+                <value>
+                    <fullName>Closed - Rejected</fullName>
+                    <default>false</default>
+                    <label>Closed - Rejected</label>
+                </value>
+                <value>
+                    <fullName>Closed - Accepted</fullName>
+                    <default>false</default>
+                    <label>Closed - Accepted</label>
+                </value>
+                <value>
+                    <fullName>Closed - Declined</fullName>
+                    <default>false</default>
+                    <label>Closed - Declined</label>
+                </value>
+                <value>
+                    <fullName>Closed - Position Closed</fullName>
+                    <default>false</default>
+                    <label>Closed - Position Closed</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Open</controllingFieldValue>
+                <valueName>New</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Open</controllingFieldValue>
+                <valueName>Phone Screen</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Open</controllingFieldValue>
+                <valueName>Schedule Interviews</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Open</controllingFieldValue>
+                <valueName>Interviews Completed</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Hold</controllingFieldValue>
+                <valueName>Offer Extended</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed</controllingFieldValue>
+                <valueName>Closed - Rejected</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed</controllingFieldValue>
+                <valueName>Closed - Accepted</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed</controllingFieldValue>
+                <valueName>Closed - Declined</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Closed</controllingFieldValue>
+                <valueName>Closed - Position Closed</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Hold</fullName>
+                    <default>false</default>
+                    <label>Hold</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Extend an Offer</fullName>
+                    <default>false</default>
+                    <label>Extend an Offer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Review_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Review Score</label>
+        <summarizedField>Review__c.Overall_Review_Score__c</summarizedField>
+        <summaryForeignKey>Review__c.Job_Application__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Job Application</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Candidate__c</columns>
+        <columns>Position__c</columns>
+        <columns>CVSnapshot__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>APP-{00000}</displayFormat>
+        <label>Job Application Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Job Applications</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Review</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>New Review</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/flow/New_Review?varJobAppId={!Job_Application__c.Id}&amp;retURL=/{!Job_Application__c.Id}</url>
+    </webLinks>
+</CustomObject>

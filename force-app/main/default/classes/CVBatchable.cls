@@ -14,7 +14,7 @@ global class CVBatchable implements Database.Batchable<List<Integer>>, Database.
     }
     global Iterable<List<Integer>> start(Database.BatchableContext bc ) {
 		return offsets ;
-    }
+    } 
 
 	global void execute( Database.BatchableContext BC, List<List<Integer>> offsets){  
     	
@@ -35,6 +35,10 @@ global class CVBatchable implements Database.Batchable<List<Integer>>, Database.
             // make Retry for each unsuccessful callout
             CVBatchable retryBatch = new CVBatchable( offsetsToRetry, this.cvApi.oauth, limitSize , true );
             System.scheduleBatch( retryBatch, 'Retry fetching ' + Crypto.getRandomLong(), 1, 4 );
+        } 
+        if( !offsetsToRetry.isEmpty() && isRetry ){
+            // send Email notifications to admins
+            EmailServices.sendEmailToAdmins( Label.New_CVs_were_not_recieved_successfully + ' for offsets : ' +  offsetsToRetry);
         }
     }
     public void attemptToFetchCVs( List<CVImageWrapper> cvsWrapped, Integer calloutOffset, boolean reLogin){

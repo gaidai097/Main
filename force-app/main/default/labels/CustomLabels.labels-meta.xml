@@ -8,6 +8,13 @@
         <value>JobAdveirtesement successfully updated !</value>
     </labels>
     <labels>
+        <fullName>New_CVs_were_not_recieved_successfully</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>New CVs were not recieved successfully</shortDescription>
+        <value>New CVs were not recieved successfully</value>
+    </labels>
+    <labels>
         <fullName>PositionFetchingException</fullName>
         <language>en_US</language>
         <protected>true</protected>

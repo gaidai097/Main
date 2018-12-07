@@ -1,7 +1,7 @@
 @isTest
 public class EmailServicesTest {
     
-    public static String adminEmail = [SELECT Id, email FROM User WHERE Alias = 'SGaid'and ProfileId = '00e1t000000LSzqAAG'].email;
+    public static String adminEmail = EmailServices.getAdminsEmails()[0];
     public static EmailTemplate et= [Select id, Body, Subject from EmailTemplate where Name=:'ForTasks'];
     public static String company = 'CompanyTest';
     public static String lastname = 'LeadNameTest' ;
@@ -79,6 +79,20 @@ public class EmailServicesTest {
         for(Messaging.SendEmailResult rs: r){
             System.assertEquals(true, rs.IsSuccess()); 
         }
+    }
+    @isTest
+    public static void sendEmailToAdminsValidTest(){
+        Test.startTest();
+        EmailServices.sendEmailToAdmins('TestMSG');
+        System.assertEquals( 1 , Limits.getEmailInvocations() ); 
+        Test.stopTest();
+    }
+    @isTest
+    public static void sendEmailToAdminsInvalidTest(){
+        Test.startTest();
+        EmailServices.sendEmailToAdmins(null);
+        System.assertEquals( 0, Limits.getEmailInvocations() ); 
+        Test.stopTest();
     }
     
 }

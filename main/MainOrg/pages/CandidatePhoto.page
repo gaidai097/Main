@@ -1,0 +1,100 @@
+<apex:page controller="CandidateController">
+     <style type="text/css">
+         .fileType {
+             display: block;
+             position: relative;
+             width: 11rem;
+             margin: auto;
+             cursor: pointer;
+             border: 0;
+             height: 2rem;
+             border-radius: 5px;
+             outline: 0;
+             box-shadow: 0px 17px 10px -10px rgba(0,0,0,0.4);
+             transition: all ease-in-out 300ms;
+         }
+         .fileType:hover{         
+             transform: translate(0px, -2px) scale(1.05);
+             box-shadow: 0 15px 6px -6px grey;
+         }
+         .fileType:hover:after {
+             background: blue;           
+         }
+         .fileType:after {
+             transition: 200ms all ease;
+             border-bottom: 3px solid rgba(0,0,0,.2);
+             background: #95B9D9;             
+             text-shadow: 0 2px 0 rgba(0,0,0,.2);
+             color: #fff;
+             font-size: 20px;
+             text-align: center;
+             position: absolute;
+             top: 0;
+             left: 0;
+             width: 100%;
+             height: 100%;
+             display: block;
+             content: 'Select';
+             line-height: 2rem;
+         }
+    </style>
+    <apex:pageBlock rendered="{!isOwner}">  
+        <apex:pageMessages ></apex:pageMessages>
+        <apex:pageBlockSection showHeader="false" columns="1" id="block1">                        
+            <apex:pageBlockSectionItem >
+                <apex:form id="main_form">
+                    <apex:commandButton id="upload"  styleclass="upload_btn" action="{!upload}" style="display: none" value="upload"/> 
+                    <apex:inputFile value="{!image}"
+                                    title="Select an image!"
+                                    id="file"
+                                    styleclass="fileType"
+                                    rendered="{!(image == null) }"
+                                    accept="image/*"                                    
+                                    /> 
+                </apex:form> 
+                <apex:form id="delete_form">
+                    <apex:commandButton id="delete" rendered="{!image != null}" styleclass="delete_btn" action="{!deleteUploadedImage}"  value="delete"/> 
+                </apex:form> 
+            </apex:pageBlockSectionItem>                   
+            <apex:pageBlockSectionItem rendered="{!(image !=null)}">                    
+                <apex:image value="/sfc/servlet.shepherd/version/download/{!contentId}"
+                            alt="Your photo" height="200" width=""/>
+            </apex:pageBlockSectionItem>              
+        </apex:pageBlockSection>            
+    </apex:pageBlock>
+    <script type="text/javascript">
+     var inputFile = document.getElementsByClassName("fileType")[0] ;
+        var uploadBtn = document.getElementsByClassName("upload_btn")[0] ;        
+        var preview = document.getElementById("previewImg");
+        
+        console.log('choosed', inputFile[0] );  
+        inputFile.onchange = function(){
+            
+            let file = this.files[0];             
+            if(file.size > 1024*1024){
+                inputFile.value = "";
+                alert('File is too big. Choose only image less then 1Mb!');
+            }else{
+                var marker = false;            
+                var types = ["image/gif","image/jpeg","image/jpg","image/png","image/bmp"];                
+                for(var j = 0; j< types.length; j++){
+                    if(types[j] == file.type){
+                        marker = true;
+                        break;
+                    };
+                };
+                if(marker){
+                    inputFile.style.display = "none";                
+                    uploadBtn.style.display = "block";
+                }else{
+                    inputFile.value = "";
+                    alert('Inappropriate type. Choose only image file!');
+                }                
+            }           
+        };
+            
+            
+        
+        
+    </script>
+</apex:page>

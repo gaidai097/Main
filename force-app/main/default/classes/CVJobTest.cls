@@ -43,26 +43,31 @@ public class CVJobTest {
         System.assertEquals( 5, jobApplications.size() );
         System.assertEquals( 2, cvSnapshots.size() );
     }
-    
+  
     @isTest
     public static void calculateOffsetsTest(){
         
         CVJob.calloutSize= 2;
         CVJob.callouts = 2;
         CVJob.batchSize = 4;
-        List < List<Integer> > offsets = CVJob.calculateOffsets(8);
+        CVJob job = new CVJob();
+        job.count = 8;
+        List < List<Integer> > offsets = job.calculateOffsets();
        	System.assertEquals( 2,  offsets.size());
-        System.assertEquals( new List<Integer>{4, 6},  offsets.get( offsets.size() - 1));
-        
-        offsets = CVJob.calculateOffsets(1);
+        System.assertEquals( new List<Integer>{4, 6},  offsets.get( offsets.size() - 1));        
+        job = new CVJob();
+        job.count = 1;
+        offsets = job.calculateOffsets();
        	System.assertEquals( 1,  offsets.size());
         System.assertEquals( new List<Integer>{0},  offsets.get( offsets.size() - 1));
-        
-        offsets = CVJob.calculateOffsets(9);
+        job = new CVJob();
+        job.count = 9;
+        offsets = job.calculateOffsets();
        	System.assertEquals( 3,  offsets.size());
         System.assertEquals( new List<Integer>{8},  offsets.get( offsets.size() - 1));
         
     }
+
     @isTest
     public static void cvScheduledTest(){
         TestDataFactory.insertMockCustomSettings();
